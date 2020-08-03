@@ -45,7 +45,7 @@ public class CompanyDAO {
 	}
 
 	public List<Company> getCompanies() {
-		String sql = "SELECT * FROM companies";
+		String sql = "SELECT * FROM companies order by company_id asc";
 		List<Company> list = jdbcTemplate.query(sql, new Object[] {}, new CompanyMapper());
 		return list;
 	}
@@ -61,7 +61,7 @@ public class CompanyDAO {
 		return company;
 	}
 
-	public void delete(int companyId) {
+	public void deleteCompany(int companyId) {
 		String sql = "DELETE FROM companies WHERE company_id=?";
 		jdbcTemplate.update(sql, companyId);
 	}

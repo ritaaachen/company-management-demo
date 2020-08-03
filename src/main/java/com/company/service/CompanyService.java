@@ -15,7 +15,7 @@ public class CompanyService {
 	@Autowired
 	private CompanyDAO companyDAO;
 
-	public void addCompany(Company company) {
+	public void createCompany(Company company) {
 		this.companyDAO.createCompany(company);
 	}
 
@@ -33,7 +33,7 @@ public class CompanyService {
 
 	public String deleteCompanyById(int companyId) {
 		if(this.companyDAO.getByCompanyId(companyId) != null) {
-			this.companyDAO.delete(companyId);
+			this.companyDAO.deleteCompany(companyId);
 		}
 		else{
 			return "Company Id is not existed.";

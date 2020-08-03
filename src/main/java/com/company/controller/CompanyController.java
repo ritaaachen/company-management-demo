@@ -16,14 +16,14 @@ public class CompanyController {
 	@Autowired
 	private CompanyService companyService;
 
-	// add company
-	@PostMapping(value="/add")
-	public @ResponseBody String addCompany (@RequestParam String companyName, @RequestParam String completedBy
+	// create company
+	@PostMapping(value="/create")
+	public @ResponseBody String createCompany (@RequestParam String companyName, @RequestParam String completedBy
 			, @RequestParam String unifiedBusinessNumber, @RequestParam String owner
 			, @RequestParam String address, @RequestParam String phoneNumber
 			, @RequestParam String fax, @RequestParam String note) {
-		System.out.println("===========  addCompany");
-		this.companyService.addCompany(companySetting(companyName, unifiedBusinessNumber, phoneNumber,
+		System.out.println("===========  createCompany");
+		this.companyService.createCompany(companySetting(companyName, unifiedBusinessNumber, phoneNumber,
 				owner, note, fax, completedBy, address));
 		return "Saved";
 	}
@@ -46,7 +46,7 @@ public class CompanyController {
 	@PostMapping(value="/delete")
 	public String deleteCompanyById(@RequestParam int companyId) {
 		System.out.println("===========  deleteCompanyById");
-		System.out.println(this.companyService.deleteCompanyById(companyId));
+//		System.out.println(this.companyService.deleteCompanyById(companyId));
 		return this.companyService.deleteCompanyById(companyId);
 	}
 
