@@ -16,7 +16,7 @@
         - deleteCompany
         - updateCompany
         - createCompany
-    - Users of company APIs
+    - user
         - getUsers
         - getUserById
         - deleteUser
