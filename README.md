@@ -1,5 +1,15 @@
 # company-management-demo
 
+### 使用工具/語言
+ - Database
+    - MySQL
+ - Backend
+    - Spring Boot (Java)
+ - Frontend
+    - HTML
+    - Javascript
+    - jQuery
+
 ### TODO
  - UI
     - User management
